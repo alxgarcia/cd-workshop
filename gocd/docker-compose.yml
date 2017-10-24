@@ -1,0 +1,17 @@
+version: '3'
+services:
+  gocdserver:
+    image: gocd/gocd-server:v17.10.0
+    hostname: go-server
+    ports:
+      - 8153:8153
+      - 8154:8154
+    restart: always
+  
+  gocdagent:
+    image: gocd/gocd-agent-alpine-3.5:v17.10.0
+    links:
+      - gocdserver
+    environment:
+      - GO_SERVER_URL=https://gocdserver:8154/go
+    restart: always
