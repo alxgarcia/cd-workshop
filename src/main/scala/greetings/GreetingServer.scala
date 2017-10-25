@@ -23,5 +23,5 @@ object GreetingServer extends HttpApp with GreetingService {
 }
 
 trait GreetingService {
-  val greet: String = ???
+  val greet: String = "Hi dude!!"
 }
