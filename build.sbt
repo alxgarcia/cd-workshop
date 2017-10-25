@@ -9,3 +9,5 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-testkit" % "10.0.10" % Test,
   "org.scalatest" %% "scalatest" % "3.0.4" % Test
 )
+
+mainClass in Compile := Some("greetings.Main")
